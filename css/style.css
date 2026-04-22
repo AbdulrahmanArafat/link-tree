@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --page-bg: #090909;
+    --panel-bg: #111111;
+    --panel-border: #242424;
+    --text-main: #f5f4f2;
+    --text-muted: #a7a7a7;
+    --link-bg: #181818;
+    --link-hover: #232323;
+    --accent: #d8b15f;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 48px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background:
+        radial-gradient(circle at top, rgba(216, 177, 95, 0.16), transparent 34%),
+        var(--page-bg);
+    color: var(--text-main);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: min(100%, 540px);
+    padding: 32px 24px;
+    border: 1px solid var(--panel-border);
+    border-radius: 24px;
+    background: rgba(17, 17, 17, 0.88);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main img {
+    width: 160px;
+    height: 160px;
+    border: 4px solid rgba(216, 177, 95, 0.35);
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.38);
+}
+
+.main h1 {
+    margin: 18px 0 0;
+    color: var(--text-main);
+    font-size: 28px;
+    line-height: 1.25;
+}
+
+.main h2 {
+    width: 100%;
+    max-width: 400px;
+    min-height: 52px;
+    margin: 12px 0 0;
+    color: var(--text-muted);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.45;
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.link {
+    position: relative;
+    width: 100%;
+    min-height: 62px;
+    padding: 0 22px;
+    display: grid;
+    grid-template-columns: 28px 1fr 28px;
+    align-items: center;
+    gap: 18px;
+    border: 1px solid var(--panel-border);
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--link-bg), #111111);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.link:hover {
+    transform: translateY(-3px);
+    border-color: rgba(216, 177, 95, 0.55);
+    background: linear-gradient(135deg, var(--link-hover), #151515);
+}
+
+.link i {
+    color: var(--accent);
+    font-size: 24px;
+    text-align: center;
+}
+
+.link a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.link a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.link a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 7px;
+    border-radius: 8px;
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 28px 14px;
+    }
+
+    .container {
+        padding: 28px 18px;
+        border-radius: 20px;
+    }
+
+    .main img {
+        width: 132px;
+        height: 132px;
+    }
+
+    .main h1 {
+        font-size: 23px;
+    }
+
+    .main h2 {
+        min-height: 76px;
+        font-size: 16px;
+    }
+
+    .link {
+        min-height: 58px;
+        padding: 0 18px;
+        grid-template-columns: 24px 1fr 24px;
+        gap: 14px;
+    }
+
+    .link i {
+        font-size: 22px;
+    }
+
+    .link a {
+        font-size: 18px;
+    }
+}
